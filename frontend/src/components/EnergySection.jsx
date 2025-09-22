@@ -30,22 +30,32 @@ export default function EtronSection() {
         >
           {/* Heading */}
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900 leading-snug md:leading-tight">
-            E-tron provide Innovative Solutions
+            Innovative Solutions
           </h2>
 
-          {/* Paragraphs */}
+          {/* Paragraph */}
           <p className="mt-4 text-sm sm:text-base md:text-lg text-gray-600">
-            E-tron has been a trusted name in battery manufacturing since 1968,
+            The Oberoi family has been a prominent name in the battery industry since 1968,
             focusing on innovation, safety, and quality in all our products.
           </p>
 
-          <p className="mt-3 sm:mt-4 text-xs sm:text-sm md:text-base text-gray-500">
-            Our proprietary <b>Shakti Acid Dilution Plants</b> – 2222, 4444, and 8888 –
-            are designed to ensure consistent acid quality, safe handling, and efficient
-            battery production. With decades of expertise, E-tron continues to innovate
-            with advanced electrolyte systems and water charging technology, making us a
-            trusted leader in North India’s battery industry.
-          </p>
+          {/* Star Bullet List for Shakti Plants */}
+          <div className="mt-3 sm:mt-4 text-xs sm:text-sm md:text-base text-gray-500">
+            <p className="mb-2">
+              <b>E-Tron Shakti Acid Dilution Plants</b>:
+            </p>
+            <ul className="space-y-1 mb-2">
+              <li>★ <b>2222</b></li>
+              <li>★ <b>4444</b></li>
+              <li>★ <b>8888</b></li>
+            </ul>
+            <p>
+              These plants are designed to ensure consistent acid quality, safe handling,
+              and efficient battery production. With decades of expertise, E-Tron continues
+              to innovate with advanced electrolyte systems and water charging technology,
+              making us a trusted leader in North India’s battery industry.
+            </p>
+          </div>
 
           {/* Features */}
           <div className="mt-6 md:mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">

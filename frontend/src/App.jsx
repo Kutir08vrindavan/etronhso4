@@ -1,3 +1,4 @@
+// src/App.jsx
 import Topbar from "./components/Topbar";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -11,17 +12,15 @@ import Services from "./components/Services";
 import Blogs from "./components/Blogs";
 import Contact from "./components/Contact";
 import Team from "./components/Team";
-import WorldMapSection from "./components/WorldMapSection";
-import HowWeWork from "./components/HowWeWork";
 import ProjectsSection from "./components/ProjectsSection";
-import Testimonials from "./components/Testimonials";
 import BlogSection from "./components/BlogSection";
 
 // 👇 Import individual service detail pages
 import AcidStorageTank from "./components/AcidStorageTank";
-import BatteryAcidDilutionPlant from "./components/BatteryAcidDilutionPlant"; // ✅ Added
+import BatteryAcidDilutionPlant from "./components/BatteryAcidDilutionPlant";
 import Electrolyte from "./components/Electrolyte";
 import WaterChargingTub from "./components/WaterChargingTub";
+import AcidDilutionTankInstallation from "./components/AcidDilutionTankInstallation";
 
 function App() {
   return (
@@ -37,10 +36,7 @@ function App() {
             <>
               <HeroSection />
               <Features /> {/* 👈 Services preview grid */}
-              <WorldMapSection />
-              <HowWeWork />
               <ProjectsSection />
-              <Testimonials />
               <BlogSection />
             </>
           }
@@ -55,9 +51,13 @@ function App() {
 
         {/* Service Detail Pages */}
         <Route path="/acid-storage-tank" element={<AcidStorageTank />} />
-        <Route path="/battery-acid-dilution" element={<BatteryAcidDilutionPlant />} /> {/* ✅ Added */}
+        <Route path="/battery-acid-dilution" element={<BatteryAcidDilutionPlant />} />
         <Route path="/electrolyte" element={<Electrolyte />} />
         <Route path="/water-charging-tub" element={<WaterChargingTub />} />
+        <Route
+          path="/acid-dilution-tank-installation"
+          element={<AcidDilutionTankInstallation />}
+        />
       </Routes>
 
       <Footer />

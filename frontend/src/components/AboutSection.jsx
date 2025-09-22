@@ -1,19 +1,21 @@
 // src/components/AboutSection.jsx
 import React from "react";
-import { FaCheckCircle } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom"; // ✅ import Link
 
 export default function AboutSection() {
   const points = [
-    "Legacy in batteries since 1968",
-    "First manufacturing unit in 1981, showroom in 1985",
-    "Diversification & advanced acid dilution plants (2013 & 2023)",
-    "Trusted brand E-tron symbolizing quality & innovation",
+    "Legacy in the battery industry since 1968",
+    "First battery manufacturing showroom in Gokhle, 1985",
+    "Inverter & Battery Manufacturing Unit opening at M/S Electromatic in Anand Parbat Industrial Area",
+    "Entered the acid industry in 2013, with E-tron established in 2016",
+    "In 2023, started manufacturing acid dilution plants and water charging tubs for the battery industry",
   ];
 
   return (
     <section className="bg-[#fffaf3] py-12 md:py-20 font-['Poppins']">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+        
         {/* Left Side Images */}
         <motion.div
           className="grid grid-cols-2 gap-3 sm:gap-4"
@@ -54,9 +56,9 @@ export default function AboutSection() {
             reliability for decades.
           </p>
 
-          {/* Bullet Points with animation */}
+          {/* Bullet Points */}
           <motion.ul
-            className="mt-5 sm:mt-6 space-y-2 sm:space-y-3"
+            className="mt-5 sm:mt-6 list-disc list-inside space-y-2 sm:space-y-3 text-gray-800 text-sm sm:text-base md:text-lg"
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
@@ -68,27 +70,27 @@ export default function AboutSection() {
             {points.map((point, idx) => (
               <motion.li
                 key={idx}
-                className="flex items-center gap-2 sm:gap-3 text-gray-800 text-sm sm:text-base md:text-lg"
                 variants={{
                   hidden: { opacity: 0, y: 20 },
                   show: { opacity: 1, y: 0 },
                 }}
               >
-                <FaCheckCircle className="text-[#283b91]" size={16} />
                 {point}
               </motion.li>
             ))}
           </motion.ul>
 
-          {/* CTA Button */}
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="mt-5 sm:mt-6 bg-[#283b91] hover:bg-[#1f2a75] text-white font-semibold 
-              px-4 py-2 sm:px-6 sm:py-3 rounded shadow-md transition text-sm sm:text-base md:text-lg"
-          >
-            Explore About Us
-          </motion.button>
+          {/* CTA Button as Link */}
+          <Link to="/about">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="mt-5 sm:mt-6 bg-[#283b91] hover:bg-[#1f2a75] text-white font-semibold 
+                px-4 py-2 sm:px-6 sm:py-3 rounded shadow-md transition text-sm sm:text-base md:text-lg"
+            >
+              Explore About Us
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>

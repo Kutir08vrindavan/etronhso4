@@ -89,7 +89,7 @@ export default function AboutSection() {
               <span className="text-[#d96327] font-bold">
                 Late Shri Jogender Lal Oberoi
               </span>
-              , founder of Oberoi Group, has built a reputation of quality and reliability for decades.
+              , founder of Oberoi Group, has built a reputation of quality and reliability Since 1968.
             </p>
 
             {/* Bullet Points */}

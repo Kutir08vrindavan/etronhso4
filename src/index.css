@@ -2,14 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ✅ Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-
-
-/* index.css */
-
-body {
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* ✅ Right side gap fix */
   font-family: "Poppins", sans-serif;
 }
+
+/* ✅ Marquee Animation */
 @keyframes marquee {
   0% {
     transform: translateX(100%);

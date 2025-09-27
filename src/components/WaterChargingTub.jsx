@@ -12,9 +12,7 @@ export default function WaterChargingTub() {
             <h1 className="text-4xl md:text-5xl font-extrabold text-[#283b91]">
               Water Charging Tubs
             </h1>
-            <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-              Durable and efficient solutions for safe battery water charging and management.
-            </p>
+            
           </div>
 
           {/* Motorcycle Battery Tub */}
@@ -26,7 +24,7 @@ export default function WaterChargingTub() {
             className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
           >
             <img
-              src="/watercharging.jpg"
+              src="/Motor.png"
               alt="Motorcycle Battery Water Charging Tub"
               className="w-full h-[32rem] object-cover rounded-2xl shadow-lg"
             />

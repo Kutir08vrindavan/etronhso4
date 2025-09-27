@@ -12,9 +12,9 @@ export default function DilutionTank2222() {
           {/* Product Image */}
           <div className="flex justify-center">
             <img
-              src="/.jpg" // 👉 replace with actual product image
+              src="/2222.png" // 👉 replace with actual product image
               alt="E-tron Shakti 2222 Dilution Plant"
-              className="rounded-2xl shadow-lg w-full max-w-md object-cover"
+              className="rounded-2xl shadow-lg w-full max-w-md h-[520px] object-cover"
             />
           </div>
 

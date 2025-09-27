@@ -37,6 +37,9 @@ import FAQs from "./components/FAQs";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsAndConditions from "./components/TermsAndConditions";
 
+// ✅ Products listing page
+import OurProducts from "./components/OurProducts";
+
 function App() {
   return (
     <>
@@ -84,6 +87,9 @@ function App() {
         <Route path="/battery-grade" element={<BatteryGrade />} />
         <Route path="/lab-grade" element={<LabGrade />} />
         <Route path="/water-dilute" element={<WaterDilute />} />
+
+        {/* ✅ Products Listing Page */}
+        <Route path="/products" element={<OurProducts />} />
 
         {/* Legal / Support Pages */}
         <Route path="/faqs" element={<FAQs />} />

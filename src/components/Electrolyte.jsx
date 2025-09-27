@@ -84,7 +84,7 @@ export default function Electrolyte() {
               >
                 <div className="overflow-hidden">
                   <img
-                    src="/water White.png"
+                    src="/WW.png"
                     alt="Water White Electrolyte"
                     className="w-full h-72 object-cover hover:scale-110 transition-transform duration-500"
                   />

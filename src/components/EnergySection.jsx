@@ -1,4 +1,5 @@
 // src/components/EtronSection.jsx
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Beaker, Droplet, FlaskConical } from "lucide-react";
 
@@ -9,7 +10,7 @@ const sentence = {
     opacity: 1,
     transition: {
       delay: 0.2,
-      staggerChildren: 0.05, // speed between letters
+      staggerChildren: 0.05,
     },
   },
 };
@@ -20,19 +21,35 @@ const letter = {
 };
 
 export default function EtronSection() {
+  // 🖼️ Array of images
+  const images = ["/e-4444.jpg", "/2222.png", "/8888.png"];
+  const [currentImage, setCurrentImage] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // ⏳ Auto change image (pause on hover) every 3 seconds
+  useEffect(() => {
+    if (isPaused) return; // pause when hovered
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 3000); // ⏰ 3 sec interval
+    return () => clearInterval(interval);
+  }, [isPaused, images.length]);
+
   return (
     <section className="bg-white py-12 md:py-20 font-['Poppins'] text-[#283b91]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
         
-        {/* Left Image */}
+        {/* Left Image with Slideshow + Pause on Hover */}
         <motion.div
+          key={currentImage} // triggers re-animation on image change
           initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          onMouseEnter={() => setIsPaused(true)}   // 🛑 pause on hover
+          onMouseLeave={() => setIsPaused(false)}  // ▶️ resume when mouse leaves
         >
           <img
-            src="/A.png"
+            src={images[currentImage]}
             alt="E-tron Production"
             className="rounded-2xl shadow-lg w-full h-52 sm:h-72 md:h-full object-cover"
           />

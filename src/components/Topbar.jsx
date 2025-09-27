@@ -12,7 +12,7 @@ export default function Topbar() {
         {/* Left Side - Contact Info */}
         <div className="flex flex-col items-center sm:flex-row sm:space-x-6 space-y-1 sm:space-y-0 text-center sm:text-left">
           <span>📞 +91 9810022249</span>
-          <span>✉️ info@.in</span>
+          <span>✉️ info@etronh2so4.in</span>
         </div>
 
         {/* Right Side - Socials */}

@@ -1,69 +1,84 @@
-// src/components/ProjectsSection.jsx
-import { motion } from "framer-motion";
+import React from "react";
+import Newsletter from "./Newsletter"; // 👈 import kiya
 
-export default function ProjectsSection() {
-  const projects = [
-    {
-      img: "electrolyte.jpg",
-      title: "Electrolyte",
-      desc: "High-quality electrolyte ensuring durability and performance.",
-    },
-    {
-      img: "watertub.jpg",
-      title: "Water Charging Tub for Battery",
-      desc: "Efficient water charging system designed for long-lasting use.",
-    },
-    {
-      img: "Acid.jpg",
-      title: "Acid Storage Tank",
-      desc: "Reliable and secure acid storage tank for industrial needs.",
-    },
-  ];
+const blogs = [
+  {
+    id: 1,
+    date: "22",
+    month: "Sep",
+    img: "/e-4444.jpg",
+    title: "Why Acid Dilution Tanks are Essential for Safe Battery Operations",
+    desc: "Understand the importance of acid dilution tanks in ensuring safety, reliability, and efficiency in battery operations.",
+  },
+  {
+    id: 2,
+    date: "30",
+    month: "Dec",
+    img: "/BG.png",
+    title: "Water Charging Tubs: Ensuring Precision and Reliability",
+    desc: "Explore how durable water charging tubs improve accuracy and extend the lifespan of batteries.",
+  },
+  {
+    id: 3,
+    date: "12",
+    month: "July",
+    img: "/electrolyte.jpg",
+    title: "Electrolyte Quality and Its Impact on Battery Performance",
+    desc: "Learn why using high-quality electrolyte is crucial for safe, long-lasting, and efficient battery performance.",
+  },
+];
 
+export default function BlogSection() {
   return (
-    <section className="bg-[#fffaf3] font-['Poppins']">
-      {/* Section Heading */}
-      <div className="max-w-7xl mx-auto px-6 text-center mb-12 relative">
-        <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="inline-block relative"
-        >
-          {/* Orange underline behind heading */}
-          <div className="absolute inset-0 bg-[#d96327] -z-10 h-3 top-1/2 transform -translate-y-1/2"></div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#283b91] relative z-10">
-            We Created a Huge <br /> Amount of Creative Projects
-          </h2>
-        </motion.div>
-      </div>
+    <>
+      <section className="py-12 bg-[#fdfcf9] text-center font-['Poppins']">
+        {/* Heading */}
+        <h2 className="text-2xl sm:text-3xl font-bold text-[#283b91]">
+          Our <span className="text-[#d96327]">Blogs</span>
+        </h2>
+        
 
-      {/* Project Cards */}
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 pb-20">
-        {projects.map((proj, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: index * 0.2 }}
-            className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col border-2 border-[#283b91]/20 hover:border-[#283b91] hover:shadow-[0_0_25px_#283b91aa] transition-all duration-300"
-          >
-            <img
-              src={proj.img}
-              alt={proj.title}
-              className="w-full h-64 sm:h-80 md:h-96 object-cover hover:scale-105 transition-transform duration-500"
-            />
-            <div className="p-6 sm:p-8 text-left">
-              <h3 className="text-xl sm:text-2xl font-bold text-[#283b91] mb-2 sm:mb-3">
-                {proj.title}
-              </h3>
-              <p className="text-[#d96327] text-base sm:text-lg font-medium">
-                {proj.desc}
-              </p>
+        {/* Blog Grid */}
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6 md:gap-8 px-4 sm:px-6 md:px-12">
+          {blogs.map((blog) => (
+            <div
+              key={blog.id}
+              className="relative rounded-lg overflow-hidden shadow-md bg-white border border-[#283b91] hover:shadow-xl hover:border-[#1f2e6e] transition-all duration-300"
+            >
+              {/* Blog Image */}
+              <img
+                src={blog.img}
+                alt={blog.title}
+                className="w-full h-40 sm:h-44 md:h-48 object-cover"
+              />
+
+              {/* Date Badge */}
+              <div className="absolute top-3 left-3 bg-[#283b91] text-white px-2 py-1 rounded-md text-center shadow">
+                <span className="block text-sm font-bold">{blog.date}</span>
+                <span className="block text-[#d96327] font-semibold text-xs">
+                  {blog.month}
+                </span>
+              </div>
+
+              {/* Blog Content */}
+              <div className="p-4 text-left">
+                <h3 className="text-base sm:text-lg font-semibold text-[#283b91]">
+                  {blog.title}
+                </h3>
+                <p className="text-[#283b91] mt-1 text-xs sm:text-sm">
+                  {blog.desc}
+                </p>
+                <button className="mt-3 text-[#d96327] text-sm font-semibold hover:underline">
+                  Read More →
+                </button>
+              </div>
             </div>
-          </motion.div>
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+      </section>
+
+      {/* Newsletter Section Below Blog */}
+      <Newsletter />
+    </>
   );
 }

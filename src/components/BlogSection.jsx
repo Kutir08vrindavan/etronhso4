@@ -1,5 +1,4 @@
 import React from "react";
-import Newsletter from "./Newsletter"; // 👈 import kiya
 
 const blogs = [
   {
@@ -33,23 +32,22 @@ export default function BlogSection() {
     <>
       <section className="py-12 bg-[#fdfcf9] text-center font-['Poppins']">
         {/* Heading */}
-        <h2 className="text-2xl sm:text-3xl font-bold text-[#283b91]">
-          Explore Our <span className="text-[#d96327]">Battery Insights</span>
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#283b91] px-4">
+          Our <span className="text-[#d96327]">Blogs</span>
         </h2>
-        
 
         {/* Blog Grid */}
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6 md:gap-8 px-4 sm:px-6 md:px-12">
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 sm:px-6 md:px-12">
           {blogs.map((blog) => (
             <div
               key={blog.id}
-              className="relative rounded-lg overflow-hidden shadow-md bg-white border border-[#283b91] hover:shadow-xl hover:border-[#1f2e6e] transition-all duration-300"
+              className="relative flex flex-col rounded-xl overflow-hidden shadow-md bg-white border border-[#283b91] hover:shadow-xl hover:border-[#1f2e6e] transition-all duration-300"
             >
               {/* Blog Image */}
               <img
                 src={blog.img}
                 alt={blog.title}
-                className="w-full h-40 sm:h-44 md:h-48 object-cover"
+                className="w-full h-44 sm:h-48 md:h-52 object-cover"
               />
 
               {/* Date Badge */}
@@ -61,14 +59,14 @@ export default function BlogSection() {
               </div>
 
               {/* Blog Content */}
-              <div className="p-4 text-left">
-                <h3 className="text-base sm:text-lg font-semibold text-[#283b91]">
+              <div className="p-4 flex flex-col flex-grow text-left">
+                <h3 className="text-base sm:text-lg font-semibold text-[#283b91] leading-snug">
                   {blog.title}
                 </h3>
-                <p className="text-[#283b91] mt-1 text-xs sm:text-sm">
+                <p className="text-[#283b91] mt-2 text-xs sm:text-sm flex-grow">
                   {blog.desc}
                 </p>
-                <button className="mt-3 text-[#d96327] text-sm font-semibold hover:underline">
+                <button className="mt-3 text-[#d96327] text-sm font-semibold hover:underline self-start">
                   Read More →
                 </button>
               </div>
@@ -78,7 +76,6 @@ export default function BlogSection() {
       </section>
 
       {/* Newsletter Section Below Blog */}
-      <Newsletter />
     </>
   );
 }

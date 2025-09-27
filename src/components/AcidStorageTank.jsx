@@ -1,22 +1,20 @@
-// src/components/AcidStorageTank.jsx
 import { Link } from "react-router-dom";
 
 export default function AcidStorageTank() {
   return (
     <>
-      {/* ✅ Hero Section */}
-      <section className="relative h-[90vh] font-['Poppins']">
+      {/* ✅ Hero Banner */}
+      <div className="relative h-[90vh] font-['Poppins']">
         <img
           src="/Banner.png"
           alt="Acid Storage Tank"
           className="absolute inset-0 w-full h-full object-cover"
         />
-      </section>
+      </div>
 
-      {/* ✅ About Section */}
-      <section className="py-20 px-6 font-['Poppins'] bg-[#fffaf3]">
+      {/* ✅ About Section (Text Left / Image Right) */}
+      <div className="py-20 px-6 font-['Poppins'] bg-[#fffaf3]">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          {/* Left Side Text */}
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-[#d96327] mb-6">
               What is an Acid Storage Tank?
@@ -33,62 +31,21 @@ export default function AcidStorageTank() {
             </p>
           </div>
 
-          {/* Right Side Image */}
           <div className="flex justify-center">
             <img
-              src="/e-4444.jpg" // Replace with Acid Storage Tank image
+              src="/Storage.jpg"
               alt="Acid Storage Tank"
               className="rounded-lg shadow-lg w-full max-w-md h-[420px] object-cover"
             />
           </div>
         </div>
-      </section>
-
-      {/* ✅ How It Works Section (Left Image + Right Text) */}
-      <section className="py-20 px-6 bg-gray-50 font-['Poppins']">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          {/* Left Side Image */}
-          <div className="flex justify-center">
-            <img
-              src="/how-it-works.jpg"
-              alt="Acid Storage Tank Working"
-              className="rounded-lg shadow-lg w-full max-w-md h-[420px] object-cover"
-            />
-          </div>
-
-          {/* Right Side Text */}
-          <div>
-            <h2 className="text-3xl font-bold text-[#d96327] mb-6">
-              How It Works
-            </h2>
-            <ul className="list-disc list-inside text-[#283b91] text-lg md:text-xl font-medium space-y-4">
-              <li>
-                <span className="font-bold">Material Selection:</span> Tanks are
-                built using FRP, HDPE, or rubber-lined steel for maximum
-                corrosion resistance.
-              </li>
-              <li>
-                <span className="font-bold">Design:</span> Cylindrical or
-                rectangular designs ensure strength and optimized space usage.
-              </li>
-              <li>
-                <span className="font-bold">Safety Features:</span> Includes
-                venting, level indicators, and secondary containment to prevent
-                leaks or overflows.
-              </li>
-              <li>
-                <span className="font-bold">Applications:</span> Widely used in
-                chemical, fertilizer, and water treatment industries for safe
-                acid handling.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+      </div>
 
       {/* ✅ CTA Section */}
-      <section className="py-16 bg-[#d96327] text-white text-center font-['Poppins']">
-        <h2 className="text-3xl font-bold mb-4">Need a Customized Acid Storage Tank?</h2>
+      <div className="py-16 bg-[#d96327] text-white text-center font-['Poppins']">
+        <h2 className="text-3xl font-bold mb-4">
+          Need a Customized Acid Storage Tank?
+        </h2>
         <p className="mb-6 max-w-2xl mx-auto">
           Our experts design and manufacture acid storage tanks tailored to your
           industrial requirements, ensuring maximum safety and durability.
@@ -99,7 +56,7 @@ export default function AcidStorageTank() {
         >
           Contact Us
         </Link>
-      </section>
+      </div>
     </>
   );
 }

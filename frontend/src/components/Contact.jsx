@@ -57,7 +57,7 @@ export default function Contact() {
         {/* Right: Map */}
         <div className="w-full h-96 rounded-lg overflow-hidden shadow-lg">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.903345098765!2d90.000000!3d26.000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDAwJzAwLjAiTiA5MMKwMDAnMDAuMCJF!5e0!3m2!1sen!2sin!4v1694000000000!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.6429690409284!2d77.368325!3d28.613939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce56d4f2a9b93%3A0xabcdef123456789!2sOberoi%20Marketing%20Private%20Limited!5e0!3m2!1sen!2sin!4v1694000000000!5m2!1sen!2sin"
             width="100%"
             height="100%"
             className="border-0"

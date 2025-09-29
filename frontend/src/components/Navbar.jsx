@@ -1,7 +1,11 @@
-// src/components/Navbar.jsx
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Bars3Icon, XMarkIcon, MagnifyingGlassIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import {
+  Bars3Icon,
+  XMarkIcon,
+  MagnifyingGlassIcon,
+  ChevronDownIcon,
+} from "@heroicons/react/24/outline";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,8 +19,8 @@ export default function Navbar() {
   const navItems = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
-    { name: "Our Services", path: "/services" },
-    { name: "Our Team", path: "/team" },
+    { name: "Our Products", path: "/products" },
+    { name: "Gallery", path: "/gallery" }, // ✅ Added Gallery section
     { name: "Blogs", path: "/blogs" },
     { name: "Contact Us", path: "/contact" },
   ];
@@ -25,32 +29,38 @@ export default function Navbar() {
     setLanguage(lang);
     setLangDropdownDesktop(false);
     setLangDropdownMobile(false);
-    // Add logic to change website content language here
   };
 
   // Close dropdowns if clicked outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (langRefDesktop.current && !langRefDesktop.current.contains(event.target)) {
+      if (
+        langRefDesktop.current &&
+        !langRefDesktop.current.contains(event.target)
+      ) {
         setLangDropdownDesktop(false);
       }
-      if (langRefMobile.current && !langRefMobile.current.contains(event.target)) {
+      if (
+        langRefMobile.current &&
+        !langRefMobile.current.contains(event.target)
+      ) {
         setLangDropdownMobile(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    return () =>
+      document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
     <nav className="bg-white shadow-md font-['Poppins'] rounded-b-2xl transition-all duration-500 ease-in-out">
-      <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-        {/* Logo */}
-        <div className="flex items-center space-x-2 ml-8 md:ml-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
+        {/* ✅ Logo (Mobile me left align rakha) */}
+        <div className="flex items-center space-x-2">
           <img
             src="/Logo.png"
             alt="Logo"
-            className="h-14 w-auto transform scale-125 transition-transform duration-500 hover:scale-135"
+            className="h-12 sm:h-14 w-auto transform scale-110 transition-transform duration-500 hover:scale-125"
           />
         </div>
 
@@ -122,12 +132,16 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* ✅ Mobile Menu Button (right side me chipka nahi, thoda left aligned) */}
         <button
-          className="md:hidden text-gray-700 transition-transform duration-300"
+          className="md:hidden text-gray-700 ml-auto transition-transform duration-300"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <XMarkIcon className="h-7 w-7" /> : <Bars3Icon className="h-7 w-7" />}
+          {isOpen ? (
+            <XMarkIcon className="h-7 w-7" />
+          ) : (
+            <Bars3Icon className="h-7 w-7" />
+          )}
         </button>
       </div>
 

@@ -1,55 +1,92 @@
-// src/components/HeroSection.jsx
-import { motion } from "framer-motion";
-import EnergySection from "./EnergySection"; // 👈 Import Energy Section
+import {
+  FaInstagram,
+  FaLinkedinIn,
+  FaYoutube,
+  FaWhatsapp,
+  FaXTwitter,
+  FaFacebookF,
+} from "react-icons/fa6";
+import EnergySection from "./EnergySection";
 
 export default function HeroSection() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative w-full h-[90vh] md:h-[100vh] flex items-center px-4 md:px-20 overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 w-full h-full">
-          <img
-            src="/hero.png"
-            alt="Hero background"
-            className="absolute inset-0 w-full h-full object-cover object-center brightness-110"
-          />
-        </div>
+      <section className="relative w-full h-[90vh] md:h-screen flex items-center justify-center">
+        {/* ✅ Desktop Banner */}
+        <div
+          className="hidden md:block absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/Banner.png')" }}
+        ></div>
+
+        {/* ✅ Mobile Banner */}
+        <div
+          className="block md:hidden absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/mobilebanner.png')" }}
+        ></div>
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
 
-        {/* Content */}
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-          className="relative z-10 text-white max-w-xl text-left px-2 sm:px-0"
+        {/* ✅ Social Media Icons (vertical right side, mobile & desktop) */}
+        <div
+          className="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-20"
         >
-          {/* Logo */}
-          <div className="mb-6 flex justify-start">
-            <img
-              src="/Logo.png"
-              alt="E-tron Logo"
-              className="h-20 w-auto sm:h-28 md:h-52 drop-shadow-2xl"
-            />
-          </div>
-
-          {/* CTA Button */}
-          <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            href="#"
-            style={{ backgroundColor: "#d96327" }}
-            className="inline-block text-white font-semibold 
-              px-4 py-2 text-xs sm:text-sm   /* 👈 compact on small screens */
-              sm:px-6 sm:py-2.5
-              md:px-8 md:py-3 md:text-base   /* 👈 larger on desktop */
-              rounded-full shadow-lg transition-all duration-300 font-['Poppins'] hover:opacity-90"
+          <a
+            href="https://youtube.com/shorts/MT_qE7OOIxY?feature=share"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center 
+                       bg-[#283b91] hover:bg-[#d96327] rounded-full text-white transition"
           >
-            Explore now
-          </motion.a>
-        </motion.div>
+            <FaYoutube />
+          </a>
+          <a
+            href="https://wa.me/919810022249"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center 
+                       bg-[#283b91] hover:bg-[#d96327] rounded-full text-white transition"
+          >
+            <FaWhatsapp />
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center 
+                       bg-[#283b91] hover:bg-[#d96327] rounded-full text-white transition"
+          >
+            <FaInstagram />
+          </a>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center 
+                       bg-[#283b91] hover:bg-[#d96327] rounded-full text-white transition"
+          >
+            <FaLinkedinIn />
+          </a>
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center 
+                       bg-[#283b91] hover:bg-[#d96327] rounded-full text-white transition"
+          >
+            <FaXTwitter />
+          </a>
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center 
+                       bg-[#283b91] hover:bg-[#d96327] rounded-full text-white transition"
+          >
+            <FaFacebookF />
+          </a>
+        </div>
       </section>
 
       {/* Energy Section Below */}

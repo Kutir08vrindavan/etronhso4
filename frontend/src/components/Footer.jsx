@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer
       className="text-white font-['Playfair_Display'] mt-12"
-      style={{ backgroundColor: "#283b91" }} // 👈 Custom Hex color
+      style={{ backgroundColor: "#283b91" }}
     >
       <div className="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-4 gap-8">
         {/* Company Info */}
@@ -95,7 +95,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="hover:text-orange-400"
             >
-              <FaXTwitter />  {/* ← use the new “X” icon */}
+              <FaXTwitter />
             </a>
           </div>
         </div>

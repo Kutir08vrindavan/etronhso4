@@ -1,15 +1,62 @@
+import { Link } from "react-router-dom";
+
 export default function AcidStorageTank() {
   return (
-    <section className="py-20 px-6 max-w-5xl mx-auto font-['Poppins']">
-      <h1 className="text-3xl font-bold text-[#d96327] mb-6">
-        Acid Storage Tank
-      </h1>
-      <p className="text-gray-700 leading-relaxed">
-        High-strength acid storage tanks designed for maximum safety,
-        reliability, and long-lasting performance. Engineered with advanced
-        materials to withstand harsh conditions while ensuring environmental
-        protection.
-      </p>
-    </section>
+    <>
+      {/* ✅ Hero Banner */}
+      <div className="relative h-[90vh] font-['Poppins']">
+        <img
+          src="/Banner.png"
+          alt="Acid Storage Tank"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      </div>
+
+      {/* ✅ About Section (Text Left / Image Right) */}
+      <div className="py-20 px-6 font-['Poppins'] bg-[#fffaf3]">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#d96327] mb-6">
+              What is an Acid Storage Tank?
+            </h2>
+            <p className="text-lg md:text-xl leading-relaxed text-[#283b91] font-medium">
+              An <span className="font-bold">acid storage tank</span> is a
+              specially designed industrial container built to safely store
+              corrosive chemicals such as{" "}
+              <span className="font-bold">sulfuric, hydrochloric, or nitric acid</span>.
+              These tanks are constructed with{" "}
+              <span className="font-bold">corrosion-resistant materials</span>{" "}
+              like FRP, HDPE, or rubber-lined steel to ensure durability,
+              chemical safety, and long service life.
+            </p>
+          </div>
+
+          <div className="flex justify-center">
+            <img
+              src="/Storage.jpg"
+              alt="Acid Storage Tank"
+              className="rounded-lg shadow-lg w-full max-w-md h-[420px] object-cover"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* ✅ CTA Section */}
+      <div className="py-16 bg-[#d96327] text-white text-center font-['Poppins']">
+        <h2 className="text-3xl font-bold mb-4">
+          Need a Customized Acid Storage Tank?
+        </h2>
+        <p className="mb-6 max-w-2xl mx-auto">
+          Our experts design and manufacture acid storage tanks tailored to your
+          industrial requirements, ensuring maximum safety and durability.
+        </p>
+        <Link
+          to="/contact"
+          className="inline-block bg-white text-[#d96327] px-6 py-3 rounded-full font-semibold shadow-md hover:bg-gray-100 transition"
+        >
+          Contact Us
+        </Link>
+      </div>
+    </>
   );
 }

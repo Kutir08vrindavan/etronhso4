@@ -1,59 +1,65 @@
 // src/components/AcidDilutionTankInstallation.jsx
-import { Battery, ArrowRight } from "lucide-react";
+import { Battery } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 export default function AcidDilutionTankInstallation() {
-  const feature = {
-    title: "Acid Dilution Storage Tank Installation & Fitting",
-    desc: "Professional installation and fitting services for acid dilution storage tanks with top-notch safety and precision.",
-    icon: <Battery className="w-12 h-12 transition-colors duration-300" />,
-    link: "/acid-dilution-tank-installation",
-  };
-
   return (
-    <motion.div
-      whileHover={{ y: -8 }}
-      transition={{ type: "spring", stiffness: 200 }}
-      className="relative group p-8 h-[420px] flex flex-col justify-between 
-                 rounded-xl shadow-lg border border-gray-200 bg-white 
-                 hover:bg-[#283b91] cursor-pointer overflow-hidden font-['Poppins'] 
-                 max-w-sm mx-auto"
-    >
-      {/* Corner Accent */}
-      <div className="absolute top-0 right-0 w-0 h-0 border-t-[70px] border-l-[70px] 
-                      border-t-[#d96327] border-l-transparent opacity-0 
-                      group-hover:opacity-100 transition-opacity duration-300"></div>
+    <section className="py-12 sm:py-16 px-4 sm:px-6 bg-[#fdfdfd] font-['Poppins']">
+      <div className="max-w-7xl mx-auto">
+        {/* Section Heading */}
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#283b91] text-center mb-10 sm:mb-12">
+          Our Service
+        </h2>
 
-      <div>
-        {/* Icon */}
-        <div className="flex justify-center mb-6 text-[#d96327] group-hover:text-white transition-colors duration-300 relative z-10">
-          {feature.icon}
+        {/* ✅ Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 items-center">
+          {/* ✅ Left Side Text */}
+          <motion.div
+            initial={{ opacity: 0, x: -80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="order-2 md:order-1 text-center md:text-left"
+          >
+            <Battery className="w-10 h-10 sm:w-12 sm:h-12 text-[#283b91] mx-auto md:mx-0 mb-4" />
+            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#d96327] leading-snug">
+              Acid Dilution Storage Tank Installation & Fitting
+            </h3>
+            <p className="mt-3 sm:mt-4 text-[#283b91] text-sm sm:text-base md:text-lg leading-relaxed">
+              Professional installation and fitting services for acid dilution
+              storage tanks with top-notch safety and precision.
+            </p>
+
+            {/* CTA */}
+            <Link to="/fitting">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="mt-5 sm:mt-6 bg-[#283b91] hover:bg-[#d96327] text-white font-semibold 
+                  px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg shadow-md transition text-sm sm:text-base md:text-lg"
+              >
+                Learn More
+              </motion.button>
+            </Link>
+          </motion.div>
+
+          {/* ✅ Right Side Image */}
+          <motion.div
+            initial={{ opacity: 0, x: 80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="order-1 md:order-2"
+          >
+            <img
+              src="/Fitting.png" // 👉 replace with your actual image
+              alt="Acid Dilution Tank Installation"
+              className="rounded-xl shadow-lg w-full h-56 sm:h-72 md:h-80 lg:h-96 object-cover"
+            />
+          </motion.div>
         </div>
-
-        {/* Title */}
-        <h3 className="text-xl font-semibold mb-4 text-[#d96327] group-hover:text-white transition-colors duration-300 relative z-10">
-          {feature.title}
-        </h3>
-
-        {/* Description */}
-        <p className="text-gray-600 group-hover:text-gray-100 transition-colors duration-300 relative z-10">
-          {feature.desc}
-        </p>
       </div>
-
-      {/* Read More Button */}
-      <div className="mt-6 flex justify-center relative z-10">
-        <Link
-          to={feature.link}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full 
-                     bg-[#d96327] text-white font-semibold text-sm 
-                     group-hover:bg-white group-hover:text-[#283b91] 
-                     transition-colors duration-300"
-        >
-          Read More <ArrowRight className="w-4 h-4" />
-        </Link>
-      </div>
-    </motion.div>
+    </section>
   );
 }

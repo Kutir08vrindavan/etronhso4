@@ -1,75 +1,73 @@
 import React from "react";
-import Newsletter from "./Newsletter"; // 👈 yahan import kiya
+import Newsletter from "./Newsletter"; // ✅ Import kiya
 
 const blogs = [
   {
     id: 1,
     date: "22",
     month: "Sep",
-    img: "workflow.jpg",
-    title: "How to Manage Workflow",
-    desc: "Learn effective strategies to streamline project workflow and ensure smooth delivery.",
+    img: "/e-4444.jpg",
+    title: "Why Acid Dilution Tanks are Essential for Safe Battery Operations",
+    desc: "Understand the importance of acid dilution tanks in ensuring safety, reliability, and efficiency in battery operations.",
   },
   {
     id: 2,
     date: "30",
     month: "Dec",
-    img: "https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    title: "Managing Client Relationships",
-    desc: "Discover how to build strong communication channels and improve client satisfaction.",
+    img: "/BG.png",
+    title: "Water Charging Tubs: Ensuring Precision and Reliability",
+    desc: "Explore how durable water charging tubs improve accuracy and extend the lifespan of batteries.",
   },
   {
     id: 3,
     date: "12",
     month: "July",
-    img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    title: "Optimizing Workflows for Teams",
-    desc: "Tips to coordinate teams, track progress, and maintain productivity across projects.",
+    img: "/electrolyte.jpg",
+    title: "Electrolyte Quality and Its Impact on Battery Performance",
+    desc: "Learn why using high-quality electrolyte is crucial for safe, long-lasting, and efficient battery performance.",
   },
 ];
 
 export default function BlogSection() {
   return (
     <>
-      <section className="py-16 bg-[#fdfcf9] text-center">
+      <section className="py-12 bg-[#fdfcf9] text-center font-['Poppins']">
         {/* Heading */}
-        <h2 className="text-3xl sm:text-4xl font-bold">
-          Read Our Daily <span className="text-orange-500">Blog</span>
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#283b91] px-4">
+          Our <span className="text-[#d96327]">Blogs</span>
         </h2>
-        <p className="max-w-2xl mx-auto mt-4 text-base sm:text-lg text-gray-600">
-          Insights, strategies, and best practices to manage workflow, handle
-          clients, and streamline business processes.
-        </p>
 
         {/* Blog Grid */}
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 px-4 sm:px-6 md:px-16">
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 sm:px-6 md:px-12">
           {blogs.map((blog) => (
             <div
               key={blog.id}
-              className="relative rounded-xl overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300"
+              className="relative flex flex-col rounded-xl overflow-hidden shadow-md bg-white border border-[#283b91] hover:shadow-xl hover:border-[#1f2e6e] transition-all duration-300"
             >
               {/* Blog Image */}
               <img
                 src={blog.img}
                 alt={blog.title}
-                className="w-full h-64 sm:h-72 md:h-64 lg:h-72 object-cover"
+                className="w-full h-44 sm:h-48 md:h-52 object-cover"
               />
 
               {/* Date Badge */}
-              <div className="absolute top-4 left-4 bg-black text-white px-3 py-2 rounded-md text-center">
-                <span className="block text-lg font-bold">{blog.date}</span>
-                <span className="block text-yellow-400 font-semibold text-sm">
+              <div className="absolute top-3 left-3 bg-[#283b91] text-white px-2 py-1 rounded-md text-center shadow">
+                <span className="block text-sm font-bold">{blog.date}</span>
+                <span className="block text-[#d96327] font-semibold text-xs">
                   {blog.month}
                 </span>
               </div>
 
               {/* Blog Content */}
-              <div className="p-5 sm:p-6 text-left">
-                <h3 className="text-lg sm:text-xl font-semibold">{blog.title}</h3>
-                <p className="text-gray-600 mt-2 text-sm sm:text-base">
+              <div className="p-4 flex flex-col flex-grow text-left">
+                <h3 className="text-base sm:text-lg font-semibold text-[#283b91] leading-snug">
+                  {blog.title}
+                </h3>
+                <p className="text-[#283b91] mt-2 text-xs sm:text-sm flex-grow">
                   {blog.desc}
                 </p>
-                <button className="mt-4 text-orange-600 font-semibold hover:underline">
+                <button className="mt-3 text-[#d96327] text-sm font-semibold hover:underline self-start">
                   Read More →
                 </button>
               </div>
@@ -78,7 +76,7 @@ export default function BlogSection() {
         </div>
       </section>
 
-      {/* Newsletter Section Below Blog */}
+      {/* ✅ Newsletter Section Below Blog */}
       <Newsletter />
     </>
   );
